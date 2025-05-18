@@ -2,14 +2,10 @@
 
 import type React from "react";
 import Link from "next/link";
-// import { usePathname } from "next/navigation";
-import { ConnectWalletButton } from "@/components/ui/connect-wallet-button";
-// import { useAccount } from "wagmi";
+import { ConnectWalletButton } from "@/components/buttons/connect-wallet-button";
+import { FaucetButton } from "@/components/buttons/FaucetButton";
 
 export default function Navbar() {
-  // const pathname = usePathname();
-  // const { isConnected } = useAccount();
-
   return (
     <nav className="bg-[#111213]">
       <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -51,6 +47,7 @@ export default function Navbar() {
         </div>
         <div className="flex items-center space-x-6">
           <ConnectWalletButton />
+          <FaucetButton />
         </div>
       </div>
     </nav>
