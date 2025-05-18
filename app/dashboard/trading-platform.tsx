@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CountryCard from "@/components/dashboard/CountryCard";
 import HistoryTable from "@/components/dashboard/HistoryTable";
+import Link from "next/link";
+import FaucetContent from "@/components/dashboard/FaucetContent";
 
 export type CountryData = {
   id: string;
@@ -154,7 +156,9 @@ const countryData: CountryData[] = [
 
 export default function TradingPlatform() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeTab, setActiveTab] = useState("discover");
+  const [activeTab, setActiveTab] = useState<"discover" | "history">(
+    "discover"
+  );
 
   // Filter countries based on search term
   const filteredCountries = countryData.filter((country) =>
@@ -169,30 +173,34 @@ export default function TradingPlatform() {
           <div className="px-2 py-[7px] rounded-[100px] outline outline-2 outline-offset-[-2px] outline-[#1d1f22] flex justify-start items-center gap-2.5">
             <motion.button
               onClick={() => setActiveTab("discover")}
-              className={`h-[63px] px-6 py-1.5 ${activeTab === "discover" ? "bg-[#262a33]" : ""
-                } rounded-[100px] shadow-[inset_1px_2px_2px_0px_rgba(0,0,0,0.08)] flex justify-start items-center gap-4 flex-wrap content-center`}
+              className={`h-[63px] px-6 py-1.5 ${
+                activeTab === "discover" ? "bg-[#262a33]" : ""
+              } rounded-[100px] shadow-[inset_1px_2px_2px_0px_rgba(0,0,0,0.08)] flex justify-start items-center gap-4 flex-wrap content-center`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.15, ease: [0.4, 0, 0.2, 1] }}
             >
               <div
-                className={`justify-start ${activeTab === "discover" ? "text-white" : "text-[#505050]"
-                  } text-xl font-normal font-['Inter'] leading-tight`}
+                className={`justify-start ${
+                  activeTab === "discover" ? "text-white" : "text-[#505050]"
+                } text-xl font-normal font-['Inter'] leading-tight`}
               >
                 Discover
               </div>
             </motion.button>
             <motion.button
               onClick={() => setActiveTab("history")}
-              className={`h-[63px] px-6 py-1.5 ${activeTab === "history" ? "bg-[#262a33]" : ""
-                } rounded-[100px] shadow-[inset_1px_2px_2px_0px_rgba(0,0,0,0.08)] flex justify-start items-center gap-4 flex-wrap content-center`}
+              className={`h-[63px] px-6 py-1.5 ${
+                activeTab === "history" ? "bg-[#262a33]" : ""
+              } rounded-[100px] shadow-[inset_1px_2px_2px_0px_rgba(0,0,0,0.08)] flex justify-start items-center gap-4 flex-wrap content-center`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.15, ease: [0.4, 0, 0.2, 1] }}
             >
               <div
-                className={`justify-start ${activeTab === "history" ? "text-white" : "text-[#505050]"
-                  } text-xl font-normal font-['Inter'] leading-tight`}
+                className={`justify-start ${
+                  activeTab === "history" ? "text-white" : "text-[#505050]"
+                } text-xl font-normal font-['Inter'] leading-tight`}
               >
                 History
               </div>

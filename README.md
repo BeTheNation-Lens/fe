@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BeTheNation
 
-## Getting Started
+[![X](https://img.shields.io/badge/Twitter-@bethenation-%231DA1F2?logo=x&style=flat)](https://x.com/bethenation_fun)
+[![Website](https://img.shields.io/badge/Website-BeTheNation-%230077B5?logo=web&style=flat)](https://bethenation.netlify.app)
+<div align="center">
+  <img src="./public/btn.png" alt="BeTheNation Logo">
+</div>
 
-First, run the development server:
+First Perpetual Prediction Market Don't Bet But Trade Your Country
+Unlock the power of perpetual contracts based on a country's progress, with predictions driven by key indicators such as GDP, inflation, currency rates and more. Trade long or short, with no time limits on your positions.
+
+## Technology Stack
+
+- **Frontend:** React, Next, TypeScript, Viem, Tailwind CSS, nuqs state management
+- **Off-Chain Backend :** Express (Mongodb NoSql Database, Handling API and Formula Functions)
+- **Blockchain:** EVM
+- **Smart Contract Framework:** Foundry (Solidity)
+- **Authentication & Wallet Abstraction:** Wagmi
+- **Deployment:** Cloudflare Pages (Frontend), Convex Cloud (Backend)
+
+## Architecture Overview
+
+BeTheNation employs a **hybrid Web2.5 architecture**:
+
+- **Web2 (Backend & Frontend):** Handles the majority of application logic, user data, listings, off-chain order status, and provides a fast, real-time user experience.
+- **Web3 (EVM, Wagmi & Viem):** Secures financial transactions through an on-chain escrow smart contract and manages user cryptographic keys/wallets via Wagmi embedded wallet solution.
+
+This approach combines the ease of development and rich UX of Web2 technologies with the security and transparency of Web3 for critical financial interactions.
+
+## Prerequisites
+Ensure you have the following installed:
+```bash
+Node.js: v18.18.0 or higher
+pnpm: (Recommended package manager) npm install -g pnpm
+Next: v15.3.1 or higher (comes with project dependencies)
+Database: Mongodb
+Backend: Expressjs
+```
+
+## Installation
+Clone the repository:
+```bash
+git clone https://github.com/BeTheNation/Frontend-btn.git
+cd Frontend-btn
+```
+
+Install dependencies:
+```bash
+npm install
+
+cd backend
+npm install
+```
+First, run the development server on root directory:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Open API [http://localhost:1000](http://localhost:1000) with your browser to see the result.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

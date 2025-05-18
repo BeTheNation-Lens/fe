@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "start": "concurrently \"npm run backend\" \"next dev --turbopack\"",
+    "dev": "concurrently \"npm run backend\" \"next dev --turbopack\"",
+    "backend": "npm run start --prefix backend",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -21,7 +23,8 @@
     "tailwindcss-animate": "^1.0.7",
     "viem": "^2.28.1",
     "wagmi": "^2.15.0",
-    "zustand": "^5.0.3"
+    "zustand": "^5.0.3",
+    "concurrently": "^8.2.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
