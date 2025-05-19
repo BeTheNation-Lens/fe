@@ -1,23 +1,22 @@
 "use client";
 
 import { ReactNode } from "react";
-import { WagmiConfig } from "wagmi";
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { WagmiProvider } from "wagmi";
+import { ConnectKitProvider } from "connectkit";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { config } from "@/lib/wallet";
-import "@rainbow-me/rainbowkit/styles.css";
-import { PositionsProvider } from "@/components/trading/PositionsContext";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const queryClient = new QueryClient();
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <WagmiConfig config={config}>
-        <PositionsProvider>
-          <RainbowKitProvider>{children}</RainbowKitProvider>
-        </PositionsProvider>
-      </WagmiConfig>
+      <WagmiProvider config={config}>
+        <ConnectKitProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </ConnectKitProvider>
+      </WagmiProvider>
     </QueryClientProvider>
   );
 }

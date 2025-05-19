@@ -36,13 +36,11 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Providers>
-          <ThemeProvider>
-            <div className="min-h-screen bg-[#111213] text-white">
-              <Navbar />
-              <main className="container mx-auto px-4 py-8">{children}</main>
-            </div>
-            <Toaster />
-          </ThemeProvider>
+          <div className="min-h-screen bg-[#111213] text-white">
+            <Navbar />
+            <main className="container mx-auto px-4 py-8">{children}</main>
+          </div>
+          <Toaster />
         </Providers>
       </body>
     </html>
