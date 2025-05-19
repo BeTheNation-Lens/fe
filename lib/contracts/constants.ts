@@ -1,7 +1,6 @@
 import { Address } from "viem";
 import MockUSDC_ABI_Imported from "./MockUSDC.json";
 
-
 // Address of Trading Contract
 /*
 export const CONTRACT_ADDRESSES: Record<number, Address> = {
@@ -10,11 +9,10 @@ export const CONTRACT_ADDRESSES: Record<number, Address> = {
 };
 */
 // Address of Trading Contract
-export const USDC_ADDRESSES: Record<number, Address> = {
-  // Base  deployment
-  50002: "0x2904921988f84BBD764D585e6f0249869FDEb25C", 
+export const USDC_ADDRESSES: { [key: number]: `0x${string}` } = {
+  37111: "0x...", // Address di Lens Testnet (GRASS)
+  232: "0x...", // Address di Lens Mainnet (GHO)
 };
-
 
 // Use the actual contract ABI
 export const MockUSDC_ABI = [
