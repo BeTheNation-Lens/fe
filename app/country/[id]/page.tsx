@@ -489,7 +489,7 @@ export default function CountryPage() {
   const { address } = useAccount();
   const { data: walletBalance, refetch: refetchBalance } = useBalance({
     address,
-    token: "0x2904921988f84BBD764D585e6f0249869FDEb25C",
+    token: "0x24dAbED6Ff98C21e5940123351400Cb99CF3Bb74",
   });
 
   const { triggerRefresh } = usePositionsStore();
@@ -593,10 +593,10 @@ export default function CountryPage() {
 
       // 1. Approve contract to use token
       const approvalTx = await writeContract({
-        address: USDC_ADDRESSES[50002],
+        address: USDC_ADDRESSES[232],
         abi: USDC_ABI,
         functionName: "approve",
-        args: [USDC_ADDRESSES[50002], sizeInWei],
+        args: [USDC_ADDRESSES[232], sizeInWei],
       });
       console.log("Approval TX:", approvalTx);
 
@@ -605,7 +605,7 @@ export default function CountryPage() {
 
       // 2. Open Position
       const tradeTx = await writeContract({
-        address: USDC_ADDRESSES[50002],
+        address: USDC_ADDRESSES[232],
         abi: MockUSDC_ABI,
         functionName: "openPosition",
         args: [

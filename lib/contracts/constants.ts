@@ -2,15 +2,8 @@ import { Address } from "viem";
 import MockUSDC_ABI_Imported from "./MockUSDC.json";
 
 // Address of Trading Contract
-/*
-export const CONTRACT_ADDRESSES: Record<number, Address> = {
-  // Pharos deployment
-  50002: "0xb8e29BB907E0cb9aBfbAa9233EfE44dF07364a2A", // 
-};
-*/
-// Address of Trading Contract
 export const USDC_ADDRESSES: { [key: number]: `0x${string}` } = {
-  232: "0x...", // Address di Lens Mainnet (GHO)
+  232: "0x24dAbED6Ff98C21e5940123351400Cb99CF3Bb74", // Address di Lens Mainnet (GHO)
 };
 
 // Use the actual contract ABI
