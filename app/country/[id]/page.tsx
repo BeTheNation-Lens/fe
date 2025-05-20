@@ -14,7 +14,7 @@ import {
 } from "wagmi";
 import { parseUnits } from "viem";
 
-import {  
+import {
   USDC_ADDRESSES,
   USDC_ABI,
   MockUSDC_ABI,
@@ -496,11 +496,11 @@ export default function CountryPage() {
 
   // Use the hook unconditionally
   const { refetch: refetchPositionFromHook } = useReadContract({
-    address: USDC_ADDRESSES[50002],
+    address: USDC_ADDRESSES[232],
     abi: MockUSDC_ABI,
     functionName: "getPosition",
     args: [] as const,
-    account: address, // Use account instead of enabled
+    account: address,
   });
 
   // Create a wrapper function that conditionally calls the hook's refetch
