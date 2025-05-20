@@ -2,6 +2,7 @@
 
 [![X](https://img.shields.io/badge/Twitter-@bethenation-%231DA1F2?logo=x&style=flat)](https://x.com/bethenation_fun)
 [![Website](https://img.shields.io/badge/Website-BeTheNation-%230077B5?logo=web&style=flat)](https://bethenation.netlify.app)
+
 <div align="center">
   <img src="./public/btn.png" alt="BeTheNation Logo">
 </div>
@@ -13,10 +14,20 @@ Unlock the power of perpetual contracts based on a country's progress, with pred
 
 - **Frontend:** React, Next, TypeScript, Viem, Tailwind CSS, nuqs state management
 - **Off-Chain Backend :** Express (Mongodb NoSql Database, Handling API and Formula Functions)
-- **Blockchain:** EVM
+- **Blockchain:** EVM (Lens GHO Mainnet)
 - **Smart Contract Framework:** Foundry (Solidity)
 - **Authentication & Wallet Abstraction:** Wagmi
 - **Deployment:** Cloudflare Pages (Frontend), Convex Cloud (Backend)
+
+## Chain Configuration
+
+The application is configured to use the Lens GHO Mainnet:
+
+- **Chain ID:** 232
+- **Currency:** GHO
+- **RPC URL:** https://rpc.lens.xyz
+- **WebSocket URL:** wss://rpc.lens.xyz/ws
+- **Block Explorer:** https://explorer.lens.xyz
 
 ## Architecture Overview
 
@@ -28,7 +39,9 @@ BeTheNation employs a **hybrid Web2.5 architecture**:
 This approach combines the ease of development and rich UX of Web2 technologies with the security and transparency of Web3 for critical financial interactions.
 
 ## Prerequisites
+
 Ensure you have the following installed:
+
 ```bash
 Node.js: v18.18.0 or higher
 pnpm: (Recommended package manager) npm install -g pnpm
@@ -38,19 +51,23 @@ Backend: Expressjs
 ```
 
 ## Installation
+
 Clone the repository:
+
 ```bash
 git clone https://github.com/BeTheNation/Frontend-btn.git
 cd Frontend-btn
 ```
 
 Install dependencies:
+
 ```bash
 npm install
 
 cd backend
 npm install
 ```
+
 First, run the development server on root directory:
 
 ```bash

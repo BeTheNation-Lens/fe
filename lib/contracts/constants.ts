@@ -10,7 +10,6 @@ export const CONTRACT_ADDRESSES: Record<number, Address> = {
 */
 // Address of Trading Contract
 export const USDC_ADDRESSES: { [key: number]: `0x${string}` } = {
-  37111: "0x...", // Address di Lens Testnet (GRASS)
   232: "0x...", // Address di Lens Mainnet (GHO)
 };
 
