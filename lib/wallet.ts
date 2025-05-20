@@ -7,10 +7,10 @@ if (!process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID) {
   throw new Error("Missing NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID");
 }
 
-// Chain config untuk Lens GHO (mainnet)
-export const lensMainnet: Chain = {
+// Family Continue + GHO chain configuration
+export const ghoChain: Chain = {
   id: 232,
-  name: "Lens GHO",
+  name: "GHO Mainnet",
   nativeCurrency: {
     name: "GHO",
     symbol: "GHO",
@@ -18,46 +18,58 @@ export const lensMainnet: Chain = {
   },
   rpcUrls: {
     default: {
-      http: ["https://rpc.lens.xyz"],
-      webSocket: ["wss://rpc.lens.xyz/ws"],
+      http: ["https://rpc.lens.dev"],
+      webSocket: ["wss://rpc.lens.dev/ws"],
     },
     public: {
-      http: ["https://rpc.lens.xyz"],
-      webSocket: ["wss://rpc.lens.xyz/ws"],
+      http: ["https://rpc.lens.dev"],
+      webSocket: ["wss://rpc.lens.dev/ws"],
     },
   },
   blockExplorers: {
     default: {
-      name: "Lens Explorer",
+      name: "GHO Explorer",
       url: "https://explorer.lens.xyz",
     },
   },
 };
 
-interface FeeEstimation {
-  maxPriorityFeePerGas: bigint;
-  maxFeePerGas: bigint;
-}
+// Add Family Continue configuration
+export const familyChain: Chain = {
+  id: 534351,
+  name: "Family Continue",
+  nativeCurrency: {
+    name: "ETH",
+    symbol: "ETH",
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc-testnet.continuefamily.xyz"],
+    },
+    public: {
+      http: ["https://rpc-testnet.continuefamily.xyz"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Continue Family Explorer",
+      url: "https://explorer-testnet.continuefamily.xyz",
+    },
+  },
+};
 
+// Update config to support both chains
 export const config = createConfig(
   getDefaultConfig({
-    chains: [lensMainnet],
-    walletConnectProjectId: process.env
-      .NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID as string,
+    // Add both chains
+    chains: [ghoChain, familyChain],
+    walletConnectProjectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID as string,
     appName: "BeTheNation",
+    // Add transport for both chains
     transports: {
-      [lensMainnet.id]: http(lensMainnet.rpcUrls.default.http[0]),
-    },
-    // Add Family Account support
-    enableFamily: true,
-    familyOptions: {
-      enabled: true,
-      minimumGuardians: 2,
-      defaultGuardianNetwork: lensMainnet.id,
-      createRecoveryConfig: {
-        recoveryPeriod: 3600 * 24 * 7, // 7 days
-        recoveryThreshold: 2, // Minimum guardians needed for recovery
-      },
+      [ghoChain.id]: http(ghoChain.rpcUrls.default.http[0]),
+      [familyChain.id]: http(familyChain.rpcUrls.default.http[0]),
     },
   })
 );
