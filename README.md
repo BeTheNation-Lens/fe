@@ -1,7 +1,7 @@
 # BeTheNation
 
 [![X](https://img.shields.io/badge/Twitter-@bethenation-%231DA1F2?logo=x&style=flat)](https://x.com/bethenation_fun)
-[![Website](https://img.shields.io/badge/Website-BeTheNation-%230077B5?logo=web&style=flat)](https://bethenation.netlify.app)
+[![Website](https://img.shields.io/badge/Website-BeTheNation-%230077B5?logo=web&style=flat)]([https://bethenation.netlify.app](https://bethenations-lens.netlify.app/))
 
 <div align="center">
   <img src="./public/btn.png" alt="BeTheNation Logo">
