@@ -12,11 +12,12 @@ Unlock the power of perpetual contracts based on a country's progress, with pred
 
 ## Technology Stack
 
-- **Frontend:** React, Next, TypeScript, Viem, Tailwind CSS, nuqs state management
-- **Blockchain:** EVM (Lens GHO Mainnet)
-- **Smart Contract Framework:** Foundry (Solidity)
-- **Authentication & Wallet Abstraction:** Wagmi
+- **Frontend:** React, Next.js, TypeScript, Tailwind CSS, Viem, Nuqs (state management)
+- **Wallet & Web3 UI:** Wagmi + ConnectKit
+- **Blockchain:** EVM-compatible (Lens GHO Mainnet)
+- **Smart Contract:** Solidity, Foundry framework
 - **Deployment:** Cloudflare Pages
+- **Tools & Integrations:** Ethers.js (via Viem), ESLint, Prettier
 
 ## Chain Configuration
 
